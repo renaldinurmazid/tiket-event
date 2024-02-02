@@ -55,7 +55,11 @@ class ProductAPiC extends Controller
      */
     public function show($id)
     {
-        //
+        $product = products::find($id);
+        if (!$product) {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+        return response()->json($product, 200);
     }
 
     /**
@@ -67,7 +71,16 @@ class ProductAPiC extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_product' => 'required|string',
+            'harga_product' => 'required|numeric',
+            'id_category' => 'required|exists:category,id',
+        ]);
+
+        $product = products::find($id);
+        $product->update($request->all());
+
+        return response()->json($product, 200);
     }
 
     /**

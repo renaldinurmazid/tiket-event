@@ -15,14 +15,6 @@
               <label for="exampleInputEmail1" class="form-label">Harga Produk</label>
               <input type="number" class="form-control" name="harga" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
-                <select name="category" class="form-control">
-                    <option selected>Open this select menu</option>
-                    @foreach ($data as $c)
-                        <option value="{{ $c->id }}">{{ $c->nama_category }}</option>
-                    @endforeach
-                </select>
-            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
       </div>

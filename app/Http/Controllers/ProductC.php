@@ -29,13 +29,11 @@ class ProductC extends Controller
         $request->validate([
             'nama' => 'required',
             'harga' => 'required',
-            'category' => 'required|exists:category,id',
         ]);
 
         products::create([
             'nama_product' => $request->input('nama'),
             'harga_product' => $request->input('harga'),
-            'id_category' => $request->input('category'),
         ]);
 
         return redirect()->route('products')->with('success', 'Data Produk berhasil disimpan');

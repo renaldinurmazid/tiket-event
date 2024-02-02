@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama_product');
             $table->integer('harga_product');
-            $table->unsignedBigInteger('id_category');
             $table->timestamps();
 
-            $table->foreign('id_category')->references('id')->on('category')->onDelete('cascade');
         });
     }
 

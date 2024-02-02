@@ -14,7 +14,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Nama Product</th>
                 <th scope="col">Harga Product</th>
-                <th scope="col">Category</th>
               </tr>
             </thead>
             <tbody>
@@ -23,7 +22,6 @@
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $p->nama_product }}</td>
                     <td>{{ $p->harga_product }}</td>
-                    <td>{{ $p->category->nama_category }}</td>
                 </tr>
               @endforeach
             </tbody>

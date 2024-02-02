@@ -32,4 +32,7 @@ Route::post('/products/post',[ProductC::class, 'store'])->name('products.store')
 
 Route::get('/transactions',[TransaksiC::class, 'index'])->name('transactions');
 Route::get('/transactions/create',[TransaksiC::class, 'create'])->name('transactions.create');
+Route::get('/transactions/show/{id}',[TransaksiC::class, 'show'])->name('transactions.show');
 Route::post('/transactions/post',[TransaksiC::class, 'store'])->name('transactions.store');
+Route::delete('/transactions/delete/{id}',[TransaksiC::class, 'destroy'])->name('transaction.destroy');
+Route::put('/transactions/update/{id}',[TransaksiC::class, 'update'])->name('transaction.update');

@@ -9,18 +9,8 @@ class products extends Model
 {
     use HasFactory;
     protected $table = "products";
-    protected $fillable = ['id', 'nama_product', 'harga_product', 'id_category'];
+    protected $fillable = ['id', 'nama_product', 'harga_product'];
 
-
-    /**
-     * Get the  te products
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function category()
-    {
-        return $this->belongsTo(category::class, 'id_category', 'id');
-    }
 }
 
     

@@ -15,15 +15,13 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_product');
             $table->string('nama_pemesan');
             $table->string('nomor_unik',10);
+            $table->json('product')->nullable();
+            $table->integer('total_belanja');
             $table->integer('uang_bayar');
             $table->integer('uang_kembali');
-            $table->integer('qty');
             $table->timestamps();
-
-            $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
         });
     }
 
